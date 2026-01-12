@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mint Theme - Default */
+:root {
+  --color-bg-primary: #E8F5F3;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F0FAF8;
+  --color-accent: #2DD4BF;
+  --color-accent-hover: #14B8A6;
+  --color-accent-light: #99F6E4;
+  --color-accent-dark: #0D9488;
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-text-inverse: #FFFFFF;
+  --color-border: #D1FAE5;
+  --color-border-hover: #A7F3D0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans JP', 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+  }
+}
+
+/* MDX content styles */
+.prose {
+  @apply text-foreground;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold text-foreground mb-6;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold text-foreground mt-10 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold text-foreground mt-8 mb-3;
+}
+
+.prose p {
+  @apply text-foreground-secondary leading-relaxed mb-4;
+}
+
+.prose a {
+  @apply text-primary hover:text-primary-hover underline;
+}
+
+.prose code {
+  @apply bg-background-tertiary px-1.5 py-0.5 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 space-y-2;
+}
+
+.prose ol {
+  @apply list-decimal list-inside mb-4 space-y-2;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-4 italic text-foreground-secondary;
+}

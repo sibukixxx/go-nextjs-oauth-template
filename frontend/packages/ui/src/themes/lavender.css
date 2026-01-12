@@ -1,0 +1,41 @@
+/* Lavender Theme */
+:root[data-theme="lavender"] {
+  /* Background */
+  --color-bg-primary: #F5F3FF;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #EDE9FE;
+
+  /* Accent */
+  --color-accent: #A78BFA;
+  --color-accent-hover: #8B5CF6;
+  --color-accent-light: #DDD6FE;
+  --color-accent-dark: #7C3AED;
+
+  /* Text */
+  --color-text-primary: #1E1B4B;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-text-inverse: #FFFFFF;
+
+  /* Border */
+  --color-border: #E9D5FF;
+  --color-border-hover: #D8B4FE;
+
+  /* Status */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px 0 rgb(30 27 75 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(30 27 75 / 0.07), 0 2px 4px -2px rgb(30 27 75 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(30 27 75 / 0.07), 0 4px 6px -4px rgb(30 27 75 / 0.07);
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+}

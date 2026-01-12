@@ -1,0 +1,66 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const sections = [
+  {
+    title: 'Getting Started',
+    items: [
+      { title: 'Introduction', href: '/docs/introduction' },
+      { title: 'Quick Start', href: '/docs/quickstart' },
+      { title: 'Installation', href: '/docs/installation' },
+    ],
+  },
+  {
+    title: 'Authentication',
+    items: [
+      { title: 'OAuth 2.1', href: '/docs/oauth' },
+      { title: 'Password Auth', href: '/docs/password-auth' },
+      { title: 'JWT Tokens', href: '/docs/jwt' },
+    ],
+  },
+  {
+    title: 'API Reference',
+    items: [
+      { title: 'Endpoints', href: '/docs/api/endpoints' },
+      { title: 'Error Codes', href: '/docs/api/errors' },
+    ],
+  },
+];
+---
+
+<BaseLayout title="Documentation - App">
+  <div class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h1 class="text-4xl font-display font-bold text-foreground">
+          Documentation
+        </h1>
+        <p class="mt-4 text-lg text-foreground-secondary">
+          Everything you need to integrate authentication into your application.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {sections.map((section) => (
+          <div class="p-6 bg-background-secondary border border-border rounded-2xl">
+            <h2 class="text-lg font-semibold text-foreground mb-4">
+              {section.title}
+            </h2>
+            <ul class="space-y-3">
+              {section.items.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="text-foreground-secondary hover:text-primary transition-colors"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

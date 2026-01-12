@@ -1,0 +1,60 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/docs', label: 'Docs' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-background-secondary/80 backdrop-blur-md border-b border-border">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold">A</span>
+        </div>
+        <span class="font-display font-semibold text-foreground">App</span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center gap-1">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.href ||
+            (item.href !== '/' && currentPath.startsWith(item.href));
+          return (
+            <a
+              href={item.href}
+              class:list={[
+                'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
+                isActive
+                  ? 'bg-primary/10 text-primary'
+                  : 'text-foreground-secondary hover:text-foreground hover:bg-background-tertiary',
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-4">
+        <a
+          href="/login"
+          class="text-sm font-medium text-foreground-secondary hover:text-foreground transition-colors"
+        >
+          Sign in
+        </a>
+        <a
+          href="/signup"
+          class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary-hover transition-colors"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

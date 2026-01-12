@@ -1,0 +1,108 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const features = [
+  {
+    title: 'OAuth 2.1',
+    description: 'Support for Google, LINE, and more providers with PKCE security.',
+    icon: '<svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>',
+  },
+  {
+    title: 'Password Auth',
+    description: 'Secure password authentication with bcrypt hashing and email verification.',
+    icon: '<svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" /></svg>',
+  },
+  {
+    title: 'JWT Tokens',
+    description: 'Stateless authentication with short-lived access tokens and refresh token rotation.',
+    icon: '<svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>',
+  },
+];
+---
+
+<BaseLayout title="App - Modern Authentication">
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-20 sm:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight">
+          Authentication made
+          <span class="text-primary">simple</span>
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-foreground-secondary leading-relaxed">
+          Secure, scalable authentication for modern applications.
+          OAuth, password-based auth, and more—all in one place.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/signup"
+            class="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-xl text-lg font-semibold hover:bg-primary-hover transition-colors shadow-lg shadow-primary/25"
+          >
+            Get Started Free
+          </a>
+          <a
+            href="/docs"
+            class="w-full sm:w-auto px-8 py-4 bg-background-secondary border border-border text-foreground rounded-xl text-lg font-semibold hover:bg-background-tertiary transition-colors"
+          >
+            Read the Docs
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background decoration -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl"></div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 bg-background-secondary">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-foreground">
+          Everything you need
+        </h2>
+        <p class="mt-4 text-lg text-foreground-secondary">
+          Built with security and developer experience in mind
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {features.map((feature) => (
+          <div class="p-6 bg-background rounded-2xl border border-border">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+              <Fragment set:html={feature.icon} />
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-2">
+              {feature.title}
+            </h3>
+            <p class="text-foreground-secondary">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-primary rounded-3xl p-12 text-center">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
+          Ready to get started?
+        </h2>
+        <p class="text-lg text-white/80 mb-8 max-w-xl mx-auto">
+          Start building secure applications today. Free tier available.
+        </p>
+        <a
+          href="/signup"
+          class="inline-block px-8 py-4 bg-white text-primary rounded-xl text-lg font-semibold hover:bg-gray-100 transition-colors"
+        >
+          Create Free Account
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mint Theme - Default */
+:root[data-theme="mint"],
+:root:not([data-theme]) {
+  --color-bg-primary: #E8F5F3;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F0FAF8;
+  --color-accent: #2DD4BF;
+  --color-accent-hover: #14B8A6;
+  --color-accent-light: #99F6E4;
+  --color-accent-dark: #0D9488;
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-text-inverse: #FFFFFF;
+  --color-border: #D1FAE5;
+  --color-border-hover: #A7F3D0;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+}
+
+/* Cream Theme */
+:root[data-theme="cream"] {
+  --color-bg-primary: #FDF8F3;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #FEF7ED;
+  --color-accent: #F59E0B;
+  --color-accent-hover: #D97706;
+  --color-accent-light: #FDE68A;
+  --color-accent-dark: #B45309;
+  --color-text-primary: #292524;
+  --color-text-secondary: #78716C;
+  --color-text-tertiary: #A8A29E;
+  --color-text-inverse: #FFFFFF;
+  --color-border: #FED7AA;
+  --color-border-hover: #FDBA74;
+  --color-success: #22C55E;
+  --color-warning: #EAB308;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  --shadow-sm: 0 1px 2px 0 rgb(41 37 36 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(41 37 36 / 0.07), 0 2px 4px -2px rgb(41 37 36 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(41 37 36 / 0.07), 0 4px 6px -4px rgb(41 37 36 / 0.07);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+}
+
+/* Lavender Theme */
+:root[data-theme="lavender"] {
+  --color-bg-primary: #F5F3FF;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #EDE9FE;
+  --color-accent: #A78BFA;
+  --color-accent-hover: #8B5CF6;
+  --color-accent-light: #DDD6FE;
+  --color-accent-dark: #7C3AED;
+  --color-text-primary: #1E1B4B;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-text-inverse: #FFFFFF;
+  --color-border: #E9D5FF;
+  --color-border-hover: #D8B4FE;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  --shadow-sm: 0 1px 2px 0 rgb(30 27 75 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(30 27 75 / 0.07), 0 2px 4px -2px rgb(30 27 75 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(30 27 75 / 0.07), 0 4px 6px -4px rgb(30 27 75 / 0.07);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans JP', 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+  }
+}

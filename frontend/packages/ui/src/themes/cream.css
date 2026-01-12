@@ -1,0 +1,41 @@
+/* Cream Theme */
+:root[data-theme="cream"] {
+  /* Background */
+  --color-bg-primary: #FDF8F3;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #FEF7ED;
+
+  /* Accent */
+  --color-accent: #F59E0B;
+  --color-accent-hover: #D97706;
+  --color-accent-light: #FDE68A;
+  --color-accent-dark: #B45309;
+
+  /* Text */
+  --color-text-primary: #292524;
+  --color-text-secondary: #78716C;
+  --color-text-tertiary: #A8A29E;
+  --color-text-inverse: #FFFFFF;
+
+  /* Border */
+  --color-border: #FED7AA;
+  --color-border-hover: #FDBA74;
+
+  /* Status */
+  --color-success: #22C55E;
+  --color-warning: #EAB308;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px 0 rgb(41 37 36 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(41 37 36 / 0.07), 0 2px 4px -2px rgb(41 37 36 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(41 37 36 / 0.07), 0 4px 6px -4px rgb(41 37 36 / 0.07);
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+}

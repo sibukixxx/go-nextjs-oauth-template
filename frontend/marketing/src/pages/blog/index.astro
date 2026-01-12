@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    slug: 'getting-started',
+    title: 'Getting Started with OAuth 2.1',
+    description: 'Learn how to set up OAuth 2.1 authentication in your application.',
+    date: '2024-01-15',
+    readTime: '5 min read',
+  },
+  {
+    slug: 'security-best-practices',
+    title: 'Security Best Practices for Authentication',
+    description: 'Essential security measures every developer should implement.',
+    date: '2024-01-10',
+    readTime: '8 min read',
+  },
+];
+---
+
+<BaseLayout title="Blog - App">
+  <div class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h1 class="text-4xl font-display font-bold text-foreground">Blog</h1>
+        <p class="mt-4 text-lg text-foreground-secondary">
+          Latest news, tips, and insights about authentication.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {posts.map((post) => (
+          <article class="group">
+            <a
+              href={`/blog/${post.slug}`}
+              class="block p-6 bg-background-secondary border border-border rounded-2xl hover:border-border-hover transition-colors"
+            >
+              <div class="flex items-center gap-4 text-sm text-foreground-tertiary mb-3">
+                <time datetime={post.date}>{post.date}</time>
+                <span>·</span>
+                <span>{post.readTime}</span>
+              </div>
+              <h2 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                {post.title}
+              </h2>
+              <p class="mt-2 text-foreground-secondary">
+                {post.description}
+              </p>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
