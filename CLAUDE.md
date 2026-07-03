@@ -77,24 +77,33 @@ LINE_OAUTH_ENABLED=false
 
 ### Backend
 
+`backend/Makefile` 経由で実行する（グローバルの Makefile 優先ルール）:
+
 ```bash
-# Build
-go build -o api ./cmd/api
+cd backend
 
-# Run
-go run ./cmd/api
+make build      # Build (bin/api)
+make run        # Build して起動
+make dev        # 開発モードで起動
+make test       # Test
+make test-race  # Test with race detector
+make fmt        # Format
+make lint       # Lint (requires golangci-lint)
+```
 
-# Test
-go test ./...
+### Frontend
 
-# Test with coverage
-go test -cover ./...
+`frontend/` は pnpm workspace のモノレポ（`pnpm-workspace.yaml`）:
 
-# Format
-go fmt ./...
+- `frontend/app` - アプリ本体 `@app/web`（Vite）
+- `frontend/admin` - 管理画面 `@app/admin`（Vite）
+- `frontend/marketing` - マーケティングサイト `@app/marketing`（Astro）
+- `frontend/packages/ui` - 共有 UI パッケージ `@app/ui`
 
-# Lint (requires golangci-lint)
-golangci-lint run ./...
+```bash
+cd frontend && pnpm install
+pnpm dev:app / dev:admin / dev:marketing   # 各 workspace の開発サーバー
+pnpm build / lint / typecheck              # workspace 一括実行
 ```
 
 ## Password Auth API Endpoints
